@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= spell.name %> - 呪文詳細</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav>
+    <a href="/">トップ</a>
+    <a href="/monsters/index">モンスター</a>
+    <a href="/items/index">アイテム</a>
+    <a href="/spells/index">呪文</a>
+  </nav>
+
+  <h1><%= spell.name %></h1>
+  
+  <div class="detail-card">
+    <dl>
+      <dt>ID</dt>
+      <dd><%= spell.id %></dd>
+      
+      <dt>名前</dt>
+      <dd><%= spell.name %></dd>
+      
+      <dt>消費MP</dt>
+      <dd><%= spell.mp_cost %></dd>
+      
+      <dt>種類</dt>
+      <dd><%= spell.type %></dd>
+      
+      <dt>効果</dt>
+      <dd><%= spell.effect %></dd>
+      
+      <dt>習得職業</dt>
+      <dd><%= spell.learner %></dd>
+      
+      <dt>習得レベル</dt>
+      <dd><%= spell.level %></dd>
+    </dl>
+  </div>
+  
+  <div class="actions">
+    <a href="/spells/edit/<%= spell.id %>" class="btn btn-primary">編集</a>
+    <form action="/spells/delete/<%= spell.id %>" method="POST" style="display: inline;">
+      <button type="submit" class="btn btn-danger" onclick="return confirm('本当に削除しますか？')">削除</button>
+    </form>
+    <a href="/spells/index" class="btn btn-secondary">一覧に戻る</a>
+  </div>
+</body>
+</html>

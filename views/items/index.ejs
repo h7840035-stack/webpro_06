@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アイテム一覧 - DQ3管理システム</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav>
+    <a href="/">トップ</a>
+    <a href="/monsters/index">モンスター</a>
+    <a href="/items/index">アイテム</a>
+    <a href="/spells/index">呪文</a>
+  </nav>
+
+  <h1>アイテム一覧</h1>
+  
+  <a href="/items/new" class="btn btn-primary">新規追加</a>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>名前</th>
+        <th>種類</th>
+        <th>価格</th>
+        <th>効果</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% items.forEach(item => { %>
+      <tr>
+        <td><%= item.id %></td>
+        <td><a href="/items/show/<%= item.id %>"><%= item.name %></a></td>
+        <td><%= item.type %></td>
+        <td><%= item.price %> G</td>
+        <td><%= item.effect %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>

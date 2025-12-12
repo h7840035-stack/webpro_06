@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>モンスター追加 - DQ3管理システム</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav>
+    <a href="/">トップ</a>
+    <a href="/monsters/index">モンスター</a>
+    <a href="/items/index">アイテム</a>
+    <a href="/spells/index">呪文</a>
+  </nav>
+
+  <h1>モンスター追加</h1>
+  
+  <form action="/monsters/create" method="POST">
+    <label for="name">名前</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="hp">HP</label>
+    <input type="number" id="hp" name="hp" required>
+    
+    <label for="mp">MP</label>
+    <input type="number" id="mp" name="mp" required>
+    
+    <label for="attack">攻撃力</label>
+    <input type="number" id="attack" name="attack" required>
+    
+    <label for="defense">守備力</label>
+    <input type="number" id="defense" name="defense" required>
+    
+    <label for="exp">経験値</label>
+    <input type="number" id="exp" name="exp" required>
+    
+    <label for="gold">ゴールド</label>
+    <input type="number" id="gold" name="gold" required>
+    
+    <label for="habitat">出現場所</label>
+    <input type="text" id="habitat" name="habitat" required>
+    
+    <div class="actions">
+      <button type="submit" class="btn btn-primary">追加</button>
+      <a href="/monsters/index" class="btn btn-secondary">キャンセル</a>
+    </div>
+  </form>
+</body>
+</html>

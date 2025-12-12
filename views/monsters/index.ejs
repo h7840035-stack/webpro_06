@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>モンスター一覧 - DQ3管理システム</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav>
+    <a href="/">トップ</a>
+    <a href="/monsters/index">モンスター</a>
+    <a href="/items/index">アイテム</a>
+    <a href="/spells/index">呪文</a>
+  </nav>
+
+  <h1>モンスター一覧</h1>
+  
+  <a href="/monsters/new" class="btn btn-primary">新規追加</a>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>名前</th>
+        <th>HP</th>
+        <th>攻撃力</th>
+        <th>守備力</th>
+        <th>出現場所</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% monsters.forEach(monster => { %>
+      <tr>
+        <td><%= monster.id %></td>
+        <td><a href="/monsters/show/<%= monster.id %>"><%= monster.name %></a></td>
+        <td><%= monster.hp %></td>
+        <td><%= monster.attack %></td>
+        <td><%= monster.defense %></td>
+        <td><%= monster.habitat %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>

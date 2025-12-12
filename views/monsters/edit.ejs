@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= monster.name %>の編集 - DQ3管理システム</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav>
+    <a href="/">トップ</a>
+    <a href="/monsters/index">モンスター</a>
+    <a href="/items/index">アイテム</a>
+    <a href="/spells/index">呪文</a>
+  </nav>
+
+  <h1><%= monster.name %>の編集</h1>
+  
+  <form action="/monsters/update/<%= monster.id %>" method="POST">
+    <label for="name">名前</label>
+    <input type="text" id="name" name="name" value="<%= monster.name %>" required>
+    
+    <label for="hp">HP</label>
+    <input type="number" id="hp" name="hp" value="<%= monster.hp %>" required>
+    
+    <label for="mp">MP</label>
+    <input type="number" id="mp" name="mp" value="<%= monster.mp %>" required>
+    
+    <label for="attack">攻撃力</label>
+    <input type="number" id="attack" name="attack" value="<%= monster.attack %>" required>
+    
+    <label for="defense">守備力</label>
+    <input type="number" id="defense" name="defense" value="<%= monster.defense %>" required>
+    
+    <label for="exp">経験値</label>
+    <input type="number" id="exp" name="exp" value="<%= monster.exp %>" required>
+    
+    <label for="gold">ゴールド</label>
+    <input type="number" id="gold" name="gold" value="<%= monster.gold %>" required>
+    
+    <label for="habitat">出現場所</label>
+    <input type="text" id="habitat" name="habitat" value="<%= monster.habitat %>" required>
+    
+    <div class="actions">
+      <button type="submit" class="btn btn-primary">更新</button>
+      <a href="/monsters/show/<%= monster.id %>" class="btn btn-secondary">キャンセル</a>
+    </div>
+  </form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= monster.name %> - モンスター詳細</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav>
+    <a href="/">トップ</a>
+    <a href="/monsters/index">モンスター</a>
+    <a href="/items/index">アイテム</a>
+    <a href="/spells/index">呪文</a>
+  </nav>
+
+  <h1><%= monster.name %></h1>
+  
+  <div class="detail-card">
+    <dl>
+      <dt>ID</dt>
+      <dd><%= monster.id %></dd>
+      
+      <dt>名前</dt>
+      <dd><%= monster.name %></dd>
+      
+      <dt>HP</dt>
+      <dd><%= monster.hp %></dd>
+      
+      <dt>MP</dt>
+      <dd><%= monster.mp %></dd>
+      
+      <dt>攻撃力</dt>
+      <dd><%= monster.attack %></dd>
+      
+      <dt>守備力</dt>
+      <dd><%= monster.defense %></dd>
+      
+      <dt>経験値</dt>
+      <dd><%= monster.exp %></dd>
+      
+      <dt>ゴールド</dt>
+      <dd><%= monster.gold %></dd>
+      
+      <dt>出現場所</dt>
+      <dd><%= monster.habitat %></dd>
+    </dl>
+  </div>
+  
+  <div class="actions">
+    <a href="/monsters/edit/<%= monster.id %>" class="btn btn-primary">編集</a>
+    <form action="/monsters/delete/<%= monster.id %>" method="POST" style="display: inline;">
+      <button type="submit" class="btn btn-danger" onclick="return confirm('本当に削除しますか？')">削除</button>
+    </form>
+    <a href="/monsters/index" class="btn btn-secondary">一覧に戻る</a>
+  </div>
+</body>
+</html>
