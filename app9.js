@@ -271,4 +271,3 @@ app.post('/spells/delete/:id', (req, res) => {
 app.listen(PORT, () => {
   console.log(`サーバ起動中: http://localhost:${PORT}`);
 });
-
